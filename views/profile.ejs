@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+</head>
+
+<body>
+
+  <% if (data) { %>
+    <h1>Welcome, <%= data.displayName %>!</h1>
+    <p>ID: <%= data.id %></p>
+    <p>Username: <%= data.username %></p>
+    <p>Full name: <%= data.displayName %></p>
+    <p>Profile Url: <a href=<%= data.picture %>><%= data.picture %></a></p>
+
+    <form action="/logout" method="POST">
+      <button>Logout</button>
+    </form>
+  <% } else { %>
+    <p>Please login.</p>
+
+    <button onclick="location.replace('/')">Login</button>
+  <% } %>
+</body>
+
+</html>
